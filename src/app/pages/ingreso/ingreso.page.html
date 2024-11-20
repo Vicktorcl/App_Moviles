@@ -1,0 +1,82 @@
+<ion-header>
+  <ion-toolbar class="custom-toolbar">
+    <div slot="start" class="ion-margin">
+      <app-language #selectLanguage></app-language>
+    </div>
+    <div class="show-in-landscape">
+      <h1 class="ion-text-center"> {{ 'AppName' | translate }} </h1>
+    </div>
+    <div slot="end" class="ion-margin">
+      <ion-button class="custom-toolbar" shape="round" size="small" (click)="navigateTheme()">
+        Tema
+      </ion-button>
+    </div>
+   </ion-toolbar>
+</ion-header>
+
+<ion-content class="background-image" [fullscreen]="true">
+  <br>
+  <br>
+  <br>
+  <br>
+  <img alt="DUOC" src="assets/images/Logoduoc.png" />
+
+  <div class="center-container">
+    <ion-card class="ion-text-center ion-padding">
+      <ion-card-header>
+        <ion-toolbar>
+          <h2>{{ 'Login.Title.Login' | translate }}</h2>
+        </ion-toolbar>
+      </ion-card-header>
+
+      <ion-card-content>
+        <ion-item>
+          <ion-input
+            [(ngModel)]="correo" 
+            placeholder="Correo"
+            placeholder="{{ 'Login.Placeholder.Email' | translate }}">
+          </ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-input
+            [(ngModel)]="password" 
+            placeholder="Contraseña"
+            placeholder="{{ 'Login.Placeholder.Password' | translate }}"
+            type="password">
+          </ion-input>
+        </ion-item>
+
+        <ion-grid>
+          <ion-row>
+            <ion-col size="12" class="ion-text-center">
+              <ion-button expand="block" (click)="ingresar()">{{ 'Login.Button.Login' | translate }}</ion-button>
+            </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col size="12" class="ion-text-center">
+              <ion-button fill="clear" (click)="toRuta()">Ruta DUOC</ion-button>
+            </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col size="12" class="ion-text-center">
+              <ion-button fill="clear" (click)="ingresarValidarCorreo()">{{ 'Login.Button.ForgotPassword' | translate }}</ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card-content>
+    </ion-card>
+  </div>
+  
+
+</ion-content>
+<ion-footer>
+  <ion-toolbar class="custom-toolbar">
+    <h5>
+      {{ 'AuthorText' | translate }}
+      {{ 'Author' | translate }}
+    </h5>
+  </ion-toolbar>
+</ion-footer>

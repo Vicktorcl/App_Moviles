@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar class="custom-toolbar">
+    <ion-title  #titulo class="ion-text-left ion-text font-size-18">
+      <div>
+        Sistema de Asistencia DUOC
+      </div>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <img alt="DUOC" src="/assets/images/Logoduoc.png" class="foto-portada" />
+  <br>
+  <br>
+  <ion-title class="ion-text-center">{{ 'PasswordRecovery.Title' | translate }}</ion-title>
+  <br>
+  <br>
+  
+  <ion-card>
+    <div class="ion-text-center">
+      <img src="/assets/images/Correo.jpg" class="foto-portada" />
+    </div>
+    <ion-card-header>
+      <ion-card-title class="ion-text-center"></ion-card-title>
+      <!-- Ion-input con [(ngModel)] para capturar el correo -->
+      <ion-input 
+        type="email" 
+        [(ngModel)]="correo" 
+        placeholder="Ej: juanperez123@duocuc.cl" 
+        class="ion-text-center"
+        required>{{ 'PasswordRecovery.Step1' | translate }}
+      </ion-input>
+    </ion-card-header>
+
+    <!-- Formulario con ngSubmit para la validación del correo -->
+    <form (ngSubmit)="verificarCorreo()">
+      <ion-card-content>
+        <div class="ion-text-center">
+          <ion-button type="submit" >{{ 'PasswordRecovery.RecoverButton' | translate }}</ion-button>
+        </div>
+      </ion-card-content>
+    </form>
+
+    <ion-card-content>
+      <div class="ion-text-center">
+        <!-- Botón para volver al inicio -->
+        <ion-button (click)="volverAlInicio()">{{ 'PasswordRecovery.GoBack' | translate }}</ion-button>
+      </div>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

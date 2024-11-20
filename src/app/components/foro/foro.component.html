@@ -1,0 +1,57 @@
+<ion-content>
+  <!-- Encabezado y logo -->
+  <a id="topOfPage" href="#topOfPage"></a>
+  <img alt="DUOC" src="assets/images/Logoduoc.png" class="foto-portada" />
+
+  <!-- Formulario de gestión de publicaciones -->
+  <ion-item-group>
+    <ion-item lines="full">
+      <ion-label position="floating">{{ 'TITLE' | translate }}</ion-label>
+      <ion-input [(ngModel)]="post.title" clearInput></ion-input>
+    </ion-item>
+
+    <ion-item lines="full">
+      <ion-label position="floating">{{ 'DESCRIPTION' | translate }}</ion-label>
+      <ion-textarea [(ngModel)]="post.body" clearInput></ion-textarea>
+    </ion-item>
+  </ion-item-group>
+
+  <!-- Botones de acción -->
+  <div class="ion-text-center margin-top-6">
+    <ion-button color="light" shape="round" (click)="cleanPost()" fill="outline">
+      <ion-icon name="brush-outline" slot="start"></ion-icon> {{ 'CLEAR' | translate }}
+    </ion-button>
+    <ion-button color="primary" shape="round" (click)="savePost()" expand="outline">
+      <ion-icon name="bookmark-outline" slot="start"></ion-icon>
+      {{ post.id ? ('UPDATE' | translate) : ('SAVE' | translate) }}
+    </ion-button>
+  </div>
+
+  <!-- Lista de publicaciones recientes -->
+  <ion-list lines="1">
+    <ion-item-divider color="dark">
+      <ion-label class="ion-text-center">{{ 'RECENT_POSTS' | translate }}</ion-label>
+    </ion-item-divider>
+
+    <ion-item *ngFor="let post of posts; trackBy: getPostId" class="ion-padding">
+      <ion-icon name="document-text-outline" size="large" color="primary"></ion-icon>
+
+      <ion-label>
+        <h3>{{ post.title }}</h3>
+        <p class="text-muted">{{ 'PUBLISHED_BY' | translate }} {{ post.author }}</p>
+        
+        <!-- Mostrar el contenido completo del post.body sin truncamiento -->
+        <p>{{ post.body }}</p>
+
+        <div style="display: flex; justify-content: flex-end; gap: 10px;">
+          <ion-fab-button size="small" color="primary" (click)="editPost(post)">
+            <ion-icon name="pencil-outline"></ion-icon>
+          </ion-fab-button>
+          <ion-fab-button size="small" color="danger" (click)="deletePost(post)">
+            <ion-icon name="trash-outline"></ion-icon>
+          </ion-fab-button>
+        </div>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

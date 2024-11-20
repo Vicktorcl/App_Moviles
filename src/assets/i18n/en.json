@@ -1,0 +1,137 @@
+{
+    "AppName": "Asistencia DUOC",
+    "AuthorText": "Developed by:",
+    "Author": "Víctor Barrientos, Elías Orellana, Jhon Varas",
+    "Language": "Language",
+    "Language.English": "English",
+    "Language.Spanish": "Español",
+    "Language.Mapudungun": "Mapudungun",
+    
+    "Start.StartNewExperience": "Start a new experience",
+
+    "Login.Title.Login": "Login",
+    "Login.Title.Theme": "Color Theme",
+    "Login.Label.Email": "Email",
+    "Login.Placeholder.Email": "Enter your email here",
+    "Login.Label.Password": "Password",
+    "Login.Placeholder.Password": "Enter your password here",
+    "Login.Button.Login": "Login",
+    "Login.Button.gps": "My route to Duoc",
+    "Login.Button.ForgotPassword": "Forgot my password",
+    "Login.Button.DarkMode": "Dark Mode",
+
+    "WelcomePage.Title.Wellcome": "Welcome to Asistencia Duoc!",
+
+    "Header.ScanButton.StopScanning": "Stop QR scanning",
+    "Welcome.Message": "Welcome!",
+
+    "Footer.Button.MyCampus": "My Duoc headquarters",
+    "Footer.Button.MyLocation": "My location",
+    "Footer.Button.CalculateRoute": "Calculate Route",
+
+    "Footer.Button.Welcome": "Home",
+    "Footer.Button.MyClass": "My Class",
+    "Footer.Button.Forum": "Forum",
+    "Footer.Button.MyData": "My Data",
+
+    "ACCOUNT": "Account",
+    "NAME": "First Name",
+    "LAST_NAME": "Last Name",
+    "EDUCATION": "Education",
+    "EMAIL": "Email",
+    "ADDRESS": "Address",
+    "BIRTH_DATE": "Birth Date",
+    "SECRET_QUESTION": "Secret Question",
+    "SECRET_ANSWER": "Secret Answer",
+    "PASSWORD": "Password",
+    "REPEAT_PASSWORD": "Repeat Password",
+    "CLEAR": "Clear Data",
+    "UPDATE": "Update Data",
+
+
+    "NO_INFORMATION": "No information available",
+    "PRESENT_IN_CLASS": "You are present in your class",
+    "INFORMATION": "Information",
+    "DETAILS": "Details",
+    "START_BLOCK": "Start Block",
+    "END_BLOCK": "End Block",
+    "DAY": "Day",
+    "END_TIME": "End Time",
+    "START_TIME": "Start Time",
+    "SUBJECT_CODE": "Subject Code",
+    "SUBJECT_NAME": "Subject Name",
+    "PROFESSOR_NAME": "Professor Name",
+    "SECTION": "Section",
+    "CAMPUS": "Campus",
+
+
+
+    "POSTS": "Posts",
+    "ENTER_YOUR_POST": "Enter your post",
+    "TITLE": "Post title",
+    "DESCRIPTION": "Description",
+    "CLEAR.FORUM": "Clear",
+    "SAVE": "Save",
+    "RECENT_POSTS": "Recent Posts",
+    "AUTHOR": "Author",
+
+
+
+
+
+    "PasswordRecovery.Title": "Recovery Password",
+    "PasswordRecovery.Step1": "Enter your email",
+    "PasswordRecovery.Step2": "Answer the secret question",
+    "PasswordRecovery.AnswerLabel": "Enter your answer",
+    "PasswordRecovery.EmailLabel": "Enter your email",
+    "PasswordRecovery.RecoverButton": "Recover Password",
+    "answerRecovery.RecoverButton": "Verify your answer",
+    "AnswerRecovery.EmailLabel": "Enter your answer",
+    "PasswordRecovery.true": "Your password is:",
+
+    "PasswordRecovery.GoBack": "Go back to Login",
+
+    "HomePage.Button.Wellcome": "Home",
+    "HomePage.Button.Scan": "Scan",
+    "HomePage.Button.Dinosaur": "Dinosaur",
+    "HomePage.Button.Forum": "Forum",
+
+    "ThemePage.Label.ColorTheme": "Color Theme:",
+    "ThemePage.Color.Light": "Light",
+    "ThemePage.Color.Dark": "Dark",
+    "ThemePage.Color.Green": "Green",
+    "ThemePage.Color.Red": "Red",
+    "ThemePage.Color.Facebook": "Facebook",
+    "ThemePage.Color.Instagram": "Instagram",
+    "ThemePage.Color.Duoc": "Duoc",
+
+    "ThemePage.Button.Primary": "Primary Button",
+    "ThemePage.Button.Secondary": "Secondary Button",
+    "ThemePage.Button.Tertiary": "Tertiary Button",
+    "ThemePage.Button.Success": "Success Button",
+    "ThemePage.Button.Warning": "Warning Button",
+    "ThemePage.Button.Danger": "Danger Button",
+    "ThemePage.Button.Light": "Light Button",
+    "ThemePage.Button.Dark": "Dark Button",
+    "ThemePage.Button.Home": "Home",
+    "ThemePage.Button.Logout": "Logout",
+
+    "ThemePage.Card.Title": "Card Title",
+    "ThemePage.Card.Subtitle": "Card Subtitle",
+    "ThemePage.Card.Content": "This is the content of the card. You can customize the colors of the card and its content.",
+
+    "ThemePage.List.Title": "Lists",
+    "ThemePage.List.Item1": "List Item 1",
+    "ThemePage.List.Item2": "List Item 2",
+    "ThemePage.List.Item3": "List Item 3",
+
+    "ThemePage.Calendar.Title": "Calendars",
+
+    "ThemePage.Form.Title": "Data Entry",
+    "ThemePage.Form.NameLabel": "Name",
+    "ThemePage.Form.NamePlaceholder": "Enter your name",
+    "ThemePage.Form.DescriptionLabel": "Description",
+    "ThemePage.Form.DescriptionPlaceholder": "Write a description here...",
+    "ThemePage.Form.ToggleLabel": "Enable notifications",
+    "ThemePage.Form.CheckboxLabel": "I accept the terms"
+}

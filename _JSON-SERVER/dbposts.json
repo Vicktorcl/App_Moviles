@@ -1,0 +1,64 @@
+{
+  "posts": [
+    {
+      "id": "1",
+      "title": "Instituto Duoc: Una Institución Educativa de Excelencia",
+      "body": "El Instituto Duoc se ha destacado por ofrecer una educación de calidad en diversas áreas del conocimiento. Sus programas académicos son altamente valorados por estudiantes y empleadores por igual.",
+      "author": "Juan Pérez"
+    },
+    {
+      "id": "2",
+      "title": "Carrera de Ingeniería en Informática en el Instituto Duoc",
+      "body": "Si te apasiona la tecnología, la carrera de Ingeniería en Informática en el Instituto Duoc es una excelente opción. Aprenderás las habilidades necesarias para destacarte en el campo de la informática.",
+      "author": "Carla Mujica"
+    },
+    {
+      "id": "3",
+      "title": "Experiencia de un Estudiante en el Instituto Duoc",
+      "body": "Como estudiante del Instituto Duoc, he tenido la oportunidad de participar en proyectos emocionantes y adquirir conocimientos prácticos que me preparan para el mundo laboral.",
+      "author": "Ana Torres"
+    },
+    {
+      "id": "4",
+      "title": "Programas de Investigación en el Instituto Duoc",
+      "body": "El Instituto Duoc promueve la investigación en diversas áreas. Sus programas de investigación han contribuido significativamente al avance del conocimiento en campos como la ciencia y la tecnología.",
+      "author": "Juan Pérez"
+    },
+    {
+      "id": "5",
+      "title": "Desarrollo de Habilidades en el Instituto Duoc",
+      "body": "En el Instituto Duoc, no solo adquieres conocimientos teóricos, sino que también desarrollas habilidades prácticas que te ayudarán a destacarte en tu carrera profesional.",
+      "author": "Carla Mujica"
+    },
+    {
+      "id": "6",
+      "title": "Innovación y Emprendimiento en el Instituto Duoc",
+      "body": "El Instituto Duoc fomenta la innovación y el espíritu emprendedor entre sus estudiantes. Muchos de sus graduados han creado empresas exitosas.",
+      "author": "Ana Torres"
+    },
+    {
+      "id": "7",
+      "title": "Instituto Duoc: Comprometido con la Educación de Calidad",
+      "body": "El Instituto Duoc se enorgullece de ofrecer una educación de calidad que prepara a los estudiantes para enfrentar los desafíos del mundo actual.",
+      "author": "Juan Pérez"
+    },
+    {
+      "id": "8",
+      "title": "Egresados Exitosos del Instituto Duoc",
+      "body": "Muchos egresados del Instituto Duoc han logrado alcanzar el éxito en sus carreras y contribuir positivamente a la sociedad.",
+      "author": "Carla Mujica"
+    },
+    {
+      "id": "9",
+      "title": "Estudiar en el Instituto Duoc: Una Experiencia Transformadora",
+      "body": "La experiencia de estudiar en el Instituto Duoc puede transformar tu vida y brindarte las herramientas necesarias para alcanzar tus metas profesionales.",
+      "author": "Ana Torres"
+    },
+    {
+      "id": "6",
+      "title": "Instituto Duoc: Compromiso con la Excelencia Académica",
+      "body": "La excelencia académica es una prioridad en el Instituto Duoc. Sus programas están diseñados para brindar una formación de alto nivel.",
+      "author": "Ana Torres"
+    }
+  ]
+}

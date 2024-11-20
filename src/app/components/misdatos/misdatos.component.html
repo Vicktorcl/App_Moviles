@@ -1,0 +1,79 @@
+<ion-content [fullscreen]="true" class="ion-padding-horizontal page">
+  <img alt="DUOC" src="assets/images/Logoduoc.png" class="foto-portada" />
+  
+  <h4 class="ion-text-center"></h4>
+
+  <!-- Campo de Cuenta -->
+  <ion-item>
+    <ion-input labelPlacement="floating" [label]="'ACCOUNT' | translate" [(ngModel)]="usuario.cuenta"></ion-input>
+  </ion-item>
+
+  <!-- Campo de Correo -->
+  <ion-item>
+    <ion-input labelPlacement="floating" [label]="'EMAIL' | translate" [(ngModel)]="usuario.correo" type="email"></ion-input>
+  </ion-item>
+
+  <!-- Campo de Nombre -->
+  <ion-item>
+    <ion-input labelPlacement="floating" [label]="'NAME' | translate" [(ngModel)]="usuario.nombre"></ion-input>
+  </ion-item>
+
+  <!-- Campo de Apellido -->
+  <ion-item>
+    <ion-input labelPlacement="floating" [label]="'LAST_NAME' | translate" [(ngModel)]="usuario.apellido"></ion-input>
+  </ion-item>
+
+  <!-- Campo de Nivel Educacional -->
+  <ion-item>
+    <ion-label position="floating">{{ 'EDUCATION' | translate }}</ion-label>
+    <ion-select [(ngModel)]="usuario.nivelEducacional"
+                (ionChange)="actualizarNivelEducacional($event)"
+                position="floating">
+      <ion-select-option *ngFor="let nivelEducacional of listaNivelesEducacionales"
+                         [value]="nivelEducacional.id">
+        {{ nivelEducacional.nombre }}
+      </ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <!-- Campo de Fecha de Nacimiento -->
+  <ion-item>
+    <app-date-picker 
+        [(ngModel)]="usuario.fechaNacimiento"
+        (ionChange)="onFechaNacimientoChange($event)"
+        [label]="'BIRTH_DATE' | translate"
+        labelPlacement="floating">
+    </app-date-picker>
+  </ion-item>
+
+  <!-- Campo de Pregunta Secreta -->
+  <ion-item>
+    <ion-input labelPlacement="floating" [label]="'SECRET_QUESTION' | translate" [(ngModel)]="usuario.preguntaSecreta"></ion-input>
+  </ion-item>
+
+  <!-- Campo de Respuesta Secreta -->
+  <ion-item>
+    <ion-input labelPlacement="floating" [label]="'SECRET_ANSWER' | translate" [(ngModel)]="usuario.respuestaSecreta"></ion-input>
+  </ion-item>
+
+  <!-- Campo de Contraseña -->
+  <ion-item>
+    <ion-input labelPlacement="floating" [label]="'PASSWORD' | translate" [(ngModel)]="usuario.password" type="password"></ion-input>
+  </ion-item>
+
+  <!-- Campo para Repetir Contraseña -->
+  <ion-item>
+    <ion-input labelPlacement="floating" [label]="'REPEAT_PASSWORD' | translate" [(ngModel)]="repeatPassword" type="password"></ion-input>
+  </ion-item>
+
+  <br>
+  <div>
+    <ion-button size="medium" color="primary" shape="round" (click)="actualizarDatos()">
+      <ion-icon name="bookmark-outline"></ion-icon> {{ 'SAVE' | translate }}
+    </ion-button>
+
+    <ion-button (click)="limpiarCampos()" shape="round" color="warning" size="medium">
+      <ion-icon name="trash"></ion-icon> {{ 'CLEAR.FORUM' | translate }}
+    </ion-button>
+  </div>
+</ion-content>

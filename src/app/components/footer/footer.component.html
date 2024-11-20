@@ -1,0 +1,32 @@
+<ion-footer class="custom-footer">
+  <ion-toolbar class="custom-footer">
+    <ion-segment
+     value="welcome" 
+     (ionChange)="segmentedChange($event)" 
+     [(ngModel)]="selectedButton" 
+     class="centrar">
+
+      <ion-segment-button value="codigoqr">
+        <ion-icon name="home-outline"></ion-icon>
+        {{ 'Footer.Button.Welcome' | translate }}
+      </ion-segment-button>
+
+      <ion-segment-button value="miclase">
+        <ion-icon name="school-outline"></ion-icon>
+        {{ 'Footer.Button.MyClass' | translate }}
+      </ion-segment-button>
+
+      <ion-segment-button value="foro">
+        <ion-icon name="pencil-outline"></ion-icon>
+        {{ 'Footer.Button.Forum' | translate }}
+      </ion-segment-button>
+
+      <ion-segment-button value="misdatos">
+        <ion-icon name="grid-outline"></ion-icon>
+        {{ 'Footer.Button.MyData' | translate }}
+      </ion-segment-button>
+
+    </ion-segment>
+
+  </ion-toolbar>
+</ion-footer>

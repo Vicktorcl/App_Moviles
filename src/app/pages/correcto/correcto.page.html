@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar class="custom-toolbar">
+    <ion-title  #titulo class="ion-text-left ion-text font-size-18">
+      <div>
+        Sistema de Asistencia DUOC
+      </div>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <img alt="DUOC" src="/assets/images/Logoduoc.png" class="foto-portada" />
+  <div class="center-container">
+    <div class="ion-padding-vertical">
+      <ion-card class="ion-text-center">
+        <img
+          alt="DUOC"
+          src="/assets/images/Correcto.jpg"
+          class="foto-portada"
+        />
+
+        <ion-card-content>
+          <ion-card-header>
+            <ion-toolbar>
+              <h2>{{ 'PasswordRecovery.true' | translate }}</h2>
+              <h1>{{ usuario?.password }}</h1> <!-- Mostrar contraseña -->
+              <br />
+              <ion-button expand="block" color="primary" (click)="irALogin()">{{ 'PasswordRecovery.GoBack' | translate }}</ion-button>
+            </ion-toolbar>
+          </ion-card-header>
+
+        </ion-card-content>
+      </ion-card>
+    </div>
+  </div>
+</ion-content>

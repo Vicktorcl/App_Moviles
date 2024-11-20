@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar class="custom-toolbar">
+    <ion-title  #titulo class="ion-text-left ion-text font-size-18">
+      <div>
+        Sistema de Asistencia DUOC
+      </div>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <img alt="DUOC" src="/assets/images/Logoduoc.png" class="foto-portada" />
+  <br>
+  <br>
+  <ion-title class="ion-text-center">{{ 'PasswordRecovery.Title' | translate }}</ion-title>
+  <ion-card>
+  <div class="ion-text-center">
+    <img alt="Silhouette of mountains" src="/assets/images/duda.webp" />
+  </div>
+  <ion-card-header>
+    
+    <ion-card-title class="ion-text-center">{{usuario?.preguntaSecreta}}</ion-card-title>
+    <br>
+    <ion-input  type="text" [(ngModel)]="respuesta" type="password" placeholder="Escribe tu respuesta"class="ion-text-center">{{ 'PasswordRecovery.Step2' | translate }}</ion-input>
+  </ion-card-header>
+
+  <ion-card-content>
+    <div class="ion-text-center">
+      <ion-button (click)="validarRespuestaSecreta()">{{ 'answerRecovery.RecoverButton' | translate }}</ion-button>
+      <ion-button  (click)="volverAlInicio()">{{ 'PasswordRecovery.GoBack' | translate }}</ion-button>
+    </div>
+   
+    
+  </ion-card-content>
+
+</ion-card>
+</ion-content>

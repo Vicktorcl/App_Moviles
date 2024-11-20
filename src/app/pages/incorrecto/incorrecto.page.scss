@@ -1,0 +1,66 @@
+ion-content {
+  --padding-top: 20px;
+  --padding-bottom: 20px;
+  --padding-end: 20px;
+  --padding-start: 20px;
+  
+  /* Asegurar que ocupe toda la pantalla */
+  --background: none; /* Elimina el fondo por defecto */
+  height: 100%;
+  width: 100%;
+}
+
+ion-item {
+  --padding-bottom: 10px;
+}
+
+body {
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+.center-container {
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center;     /* Centra verticalmente */
+  height: 90vh;           /* Ocupa casi toda la altura de la pantalla */
+}
+
+.foto-portada {
+  width: 100%;
+}
+
+@media screen and (orientation: landscape) {
+  .center-container {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center;     /* Centra verticalmente */
+    height: 80%;           /* Ocupa 80% de la altura */
+    width: 80%;
+    text-align: center;
+    margin: auto;
+  }
+
+  .foto-portada {
+    width: 30%;
+  }
+}
+
+.centrar {
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center;     /* Centra verticalmente */
+}
+
+.background-image {
+  /* Asegura que el fondo cubra todo */
+  background: url('/src/assets/images/pao.jpg') no-repeat center center fixed;
+  background-size: cover;
+  height: 100vh; /* Ocupa toda la altura de la ventana */
+  width: 100%;
+}
+
+.custom-toolbar {
+  --background: #ffb800; /* Cambia el fondo del toolbar a amarillo */
+  --color: black; /* Cambia el color del texto a negro */
+}

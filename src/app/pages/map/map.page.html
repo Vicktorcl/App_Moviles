@@ -1,0 +1,32 @@
+<app-header></app-header>
+
+<ion-content [fullscreen]="true">
+
+  <!-- El div con id "mapId" será donde se mostrará el mapa -->
+  <div id="mapId" style="height: 100%;"></div>
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar class="custom-footer ion-text-center">
+    <ion-button shape="round" class="custom-footer" size="small"
+        (click)="goToDUOC()" >
+      DUOC
+    </ion-button>
+
+    <ion-button shape="round" class="custom-footer" size="small"
+        (click)="goToMyPosition()">
+      Aquí
+    </ion-button>
+
+    <ion-button shape="round" class="custom-footer" size="small"
+        (click)="showRouteToDuoc()">
+      Ruta
+    </ion-button>
+
+    <div *ngIf="distance">
+      <br>
+      {{ distance }}
+    </div>
+  </ion-toolbar>
+</ion-footer>
