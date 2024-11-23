@@ -208,7 +208,7 @@ export class DataBaseService {
     try {
       const q = 'SELECT * FROM USUARIO WHERE cuenta=? AND password=?;';
       const rows = (await this.db.query(q, [cuenta, password])).values;
-      return rows? this.rowToUser(rows[0]) : undefined;
+      return rows?.length? this.rowToUser(rows[0]) : undefined;
     } catch (error) {
       showAlertError('DataBaseService.findUser', error);
       return undefined;

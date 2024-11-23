@@ -1,4 +1,4 @@
-<ion-header>
+<ion-header id="Asistencia DUOC">
   <ion-toolbar class="custom-toolbar">
     <div slot="start" class="ion-margin">
       <app-language #selectLanguage></app-language>
@@ -11,7 +11,7 @@
         Tema
       </ion-button>
     </div>
-   </ion-toolbar>
+  </ion-toolbar>
 </ion-header>
 
 <ion-content class="background-image" [fullscreen]="true">
@@ -30,48 +30,54 @@
       </ion-card-header>
 
       <ion-card-content>
+        <!-- Campo de correo -->
         <ion-item>
           <ion-input
+            id="correo"
             [(ngModel)]="correo" 
-            placeholder="Correo"
             placeholder="{{ 'Login.Placeholder.Email' | translate }}">
           </ion-input>
         </ion-item>
 
+        <!-- Campo de contraseña -->
         <ion-item>
           <ion-input
+            id="password"
             [(ngModel)]="password" 
-            placeholder="Contraseña"
             placeholder="{{ 'Login.Placeholder.Password' | translate }}"
             type="password">
           </ion-input>
         </ion-item>
 
+        <!-- Botones -->
         <ion-grid>
           <ion-row>
             <ion-col size="12" class="ion-text-center">
-              <ion-button expand="block" (click)="ingresar()">{{ 'Login.Button.Login' | translate }}</ion-button>
+              <ion-button id="login-btn" expand="block" (click)="ingresar()">
+                {{ 'Login.Button.Login' | translate }}
+              </ion-button>
             </ion-col>
           </ion-row>
 
           <ion-row>
             <ion-col size="12" class="ion-text-center">
-              <ion-button fill="clear" (click)="toRuta()">Ruta DUOC</ion-button>
+              <ion-button id="ruta-btn" fill="clear" (click)="toRuta()">Ruta DUOC</ion-button>
             </ion-col>
           </ion-row>
 
           <ion-row>
             <ion-col size="12" class="ion-text-center">
-              <ion-button fill="clear" (click)="ingresarValidarCorreo()">{{ 'Login.Button.ForgotPassword' | translate }}</ion-button>
+              <ion-button id="forgot-password-btn" fill="clear" (click)="ingresarValidarCorreo()">
+                {{ 'Login.Button.ForgotPassword' | translate }}
+              </ion-button>
             </ion-col>
           </ion-row>
         </ion-grid>
       </ion-card-content>
     </ion-card>
   </div>
-  
-
 </ion-content>
+
 <ion-footer>
   <ion-toolbar class="custom-toolbar">
     <h5>

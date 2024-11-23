@@ -88,7 +88,7 @@ export class AuthService {
       if (usuarioAutenticado) {
         this.usuarioAutenticado.next(usuarioAutenticado);
         this.primerInicioSesion.next(false);
-        await this.router.navigate(['/inicio']);
+        await this.router.navigate(['/ingreso']);
         return true;
       } else {
         const usuario = await this.bd.buscarUsuarioValido (cuenta, password);
