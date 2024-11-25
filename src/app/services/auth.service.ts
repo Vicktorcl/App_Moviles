@@ -15,12 +15,7 @@ export class AuthService {
   keyUsuario = 'USUARIO_AUTENTICADO';
   usuarioAutenticado = new BehaviorSubject<Usuario | null>(null);
 
-  // La variable primerInicioSesion vale true cuando el usuario digita correctamente sus
-  // credenciales y logra entrar al sistema por primera vez. Pero vale falso, si el 
-  // usuario ya ha iniciado sesión, luego cierra la aplicación sin cerrar la sesión
-  // y vuelve a entrar nuevamente. Si el usuario ingresa por primera vez, se limpian todas
-  // las componentes, pero se dejan tal como están y no se limpian, si el suario
-  // cierra al aplicación y la vuelve a abrir sin haber previamente cerrado la sesión.
+  // La variable primerInicioSesion
   primerInicioSesion =  new BehaviorSubject<boolean>(false);
   storageQrCodeKey = 'QR_CODE';
   qrCodeData = new BehaviorSubject<string | null>(null);
@@ -42,16 +37,17 @@ export class AuthService {
     }
   }
 
+  // Leer el usuario autenticado y retornar su tipo de cuenta
   async leerUsuarioAutenticado(): Promise<Usuario | null> {
     try {
-      const usuario = (await this.storage.get(this.keyUsuario)) as Usuario | null;
+      const usuario = await this.storage.get(this.keyUsuario) as Usuario | null;
       this.usuarioAutenticado.next(usuario ?? null);
       return usuario;
     } catch (error) {
       showAlertError('AuthService.readAuthUser', error);
       return null;
     }
-}
+  }
 
   async guardarUsuarioAutenticado(usuario: Usuario): Promise<Usuario | null> {
     try {
@@ -64,15 +60,15 @@ export class AuthService {
     }
   }
 
-    async eliminarUsuarioAutenticado(): Promise<boolean>{
-      try {
-        await this.storage.remove(this.keyUsuario);
-        this.usuarioAutenticado.next(null);
-        return true;
-      } catch (error) {
-        showAlertError('AuthService.deleteAuthUser', error);
-        return false;
-      }
+  async eliminarUsuarioAutenticado(): Promise<boolean> {
+    try {
+      await this.storage.remove(this.keyUsuario);
+      this.usuarioAutenticado.next(null);
+      return true;
+    } catch (error) {
+      showAlertError('AuthService.deleteAuthUser', error);
+      return false;
+    }
   }
 
   async buscarUsuarioPorCorreo(correo: string): Promise<Usuario | null> {
@@ -80,18 +76,18 @@ export class AuthService {
     return usuario || null;
   }
 
-
   async login(cuenta: string, password: string): Promise<boolean> {
     try {
       const usuarioAutenticado = await this.storage.get(this.keyUsuario);
 
       if (usuarioAutenticado) {
+        // Si ya hay un usuario autenticado, no hace falta repetir la lógica
         this.usuarioAutenticado.next(usuarioAutenticado);
         this.primerInicioSesion.next(false);
         await this.router.navigate(['/ingreso']);
         return true;
       } else {
-        const usuario = await this.bd.buscarUsuarioValido (cuenta, password);
+        const usuario = await this.bd.buscarUsuarioValido(cuenta, password);
 
         if (usuario) {
           showToast(`¡Bienvenid@ ${usuario.nombre} ${usuario.apellido}!`);
@@ -100,7 +96,7 @@ export class AuthService {
           await this.router.navigate(['/inicio']);
           return true;
         } else {
-          showToast('El correo o la password son incorrectos');
+          showToast('El correo o la contraseña son incorrectos');
           await this.router.navigate(['/ingreso']);
           return false;
         }
@@ -128,51 +124,43 @@ export class AuthService {
     }
   }
 
+  // Métodos para manejar el QR
   async readQrFromStorage(): Promise<string | null> {
-  try {
-       const qrData = await this.storage.get(this.storageQrCodeKey) as string | null;
-       this.qrCodeData.next(qrData);
+    try {
+      const qrData = await this.storage.get(this.storageQrCodeKey) as string | null;
+      this.qrCodeData.next(qrData);
       return qrData;
     } catch (error) {
       showAlertError('AuthService.readQrFromStorage', error);
       return null;
     }
-   }
+  }
 
-   async saveQrToStorage(qrData: string): Promise<string | null> {
-     try {
-       await this.storage.set(this.storageQrCodeKey, qrData);
-       this.qrCodeData.next(qrData);
-       return qrData;
-     } catch (error) {
-       showAlertError('AuthService.saveQrToStorage', error);
-       return null;
-     }
-   }
+  async saveQrToStorage(qrData: string): Promise<string | null> {
+    try {
+      await this.storage.set(this.storageQrCodeKey, qrData);
+      this.qrCodeData.next(qrData);
+      return qrData;
+    } catch (error) {
+      showAlertError('AuthService.saveQrToStorage', error);
+      return null;
+    }
+  }
 
-   async deleteQrFromStorage(): Promise<boolean> {
-     try {
-       await this.storage.remove(this.storageQrCodeKey);
-       this.qrCodeData.next(null);
-       return true;
-     } catch (error) {
-       showAlertError('AuthService.deleteQrFromStorage', error);
-       return false;
-     }
-   }
+  async deleteQrFromStorage(): Promise<boolean> {
+    try {
+      await this.storage.remove(this.storageQrCodeKey);
+      this.qrCodeData.next(null);
+      return true;
+    } catch (error) {
+      showAlertError('AuthService.deleteQrFromStorage', error);
+      return false;
+    }
+  }
 
-  //  async buscarUsuarioPorCorreo(correo: string): Promise<Usuario | null> {
-  //   try {
-  //     const usuario = await this.bd.buscarUsuarioPorCorreo(correo); // Llama al método de DataBaseService
-  //     if (usuario) {
-  //       return usuario;
-  //     } else {
-  //       return null;
-  //     }
-  //   } catch (error) {
-  //     console.error('Error al buscar el usuario:', error);
-  //     return null;
-  //   }
-  // }
-
+  // Método para obtener el tipo de cuenta del usuario (admin o usuario normal)
+  get tipoCuenta(): string | null {
+    const usuario = this.usuarioAutenticado.value;
+    return usuario ? usuario.cuenta : null;  // Devuelve 'admin' o 'usuario'
+  }
 }

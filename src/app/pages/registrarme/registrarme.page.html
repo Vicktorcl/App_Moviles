@@ -1,7 +1,7 @@
 <ion-content [fullscreen]="true" class="ion-padding-horizontal page">
   <img alt="DUOC" src="assets/images/Logoduoc.png" class="foto-portada" />
   
-  <h3 class="ion-text-center"  style="color: #ffb800;">Sistema de asistencia DUOC</h3>
+  <h4 class="ion-text-center" id="saludo">{{ 'Login.Button.Register' | translate }}</h4>
 
   <!-- Campo de Cuenta -->
   <ion-item>
@@ -31,7 +31,7 @@
   <!-- Campo de Nivel Educacional -->
   <ion-item>
     <ion-label position="floating">{{ 'EDUCATION' | translate }}</ion-label>
-    <ion-select id="Educacion" [(ngModel)]="usuario.nivelEducacional" (ionChange)="actualizarNivelEducacional($event)" position="floating">
+    <ion-select id="Educacion" [(ngModel)]="usuario.nivelEducacional" position="floating">
       <ion-select-option *ngFor="let nivelEducacional of listaNivelesEducacionales" [value]="nivelEducacional.id">
         {{ nivelEducacional.nombre }}
       </ion-select-option>
@@ -43,7 +43,6 @@
     <app-date-picker 
         id="FechaNacimiento"
         [(ngModel)]="usuario.fechaNacimiento"
-        (ionChange)="onFechaNacimientoChange($event)"
         [label]="'BIRTH_DATE' | translate"
         labelPlacement="floating">
     </app-date-picker>
@@ -77,6 +76,10 @@
 
     <ion-button id="Limpiar" (click)="limpiarCampos()" shape="round" color="warning" size="medium">
       <ion-icon name="trash"></ion-icon> {{ 'CLEAR.FORUM' | translate }}
+    </ion-button>
+
+    <ion-button id="Volver" (click)="volverAlInicio()" shape="round" color="success" size="medium">
+      <ion-icon name="log-out-outline"></ion-icon> {{ 'PasswordRecovery.GoBack' | translate }}
     </ion-button>
   </div>
 </ion-content>

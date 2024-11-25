@@ -4,7 +4,7 @@
       <app-language #selectLanguage></app-language>
     </div>
     <div class="show-in-landscape">
-      <h1 class="ion-text-center"> {{ 'AppName' | translate }} </h1>
+      <h3 class="ion-text-center"> {{ 'AppName' | translate }} </h3>
     </div>
     <div slot="end" class="ion-margin">
       <ion-button class="custom-toolbar" shape="round" size="small" (click)="navigateTheme()">
@@ -62,6 +62,14 @@
           <ion-row>
             <ion-col size="12" class="ion-text-center">
               <ion-button id="ruta-btn" fill="clear" (click)="toRuta()">Ruta DUOC</ion-button>
+            </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col size="12" class="ion-text-center" >
+              <ion-button id="registrarse-btn" fill="clear" (click)="toRegistrarse()">
+                {{ 'Login.Button.Register' | translate }}
+              </ion-button>
             </ion-col>
           </ion-row>
 

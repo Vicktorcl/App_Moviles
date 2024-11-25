@@ -1,14 +1,18 @@
 .floating-div {
-  position: fixed;  /* Fija el div en la pantalla, independiente de scroll o del ion-item */
-  top: 50%;         /* Posiciona el div al 50% del alto de la pantalla */
-  left: 50%;        /* Posiciona el div al 50% del ancho de la pantalla */
-  transform: translate(-50%, -50%); /* Ajusta la posición para centrar el div exactamente */
-  z-index: 1000;    /* Asegura que el div esté por encima de otros elementos */
-  background-color: white;  /* Fondo blanco */
-  padding: 20px;    /* Espacio interno */
-  border: 1px solid black;  /* Borde negro */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para resaltar el div */
-  border-radius: 8px;  /* Bordes redondeados */
-  width: 300px;  /* Ancho personalizado */
-  text-align: center;  /* Centra el texto dentro del div */
+  position: fixed !important;  /* Fija el div en la pantalla, independiente de scroll o del ion-item */
+  top: 50% !important;         /* Posiciona el div al 50% del alto de la pantalla */
+  left: 50% !important;        /* Posiciona el div al 50% del ancho de la pantalla */
+  transform: translate(-50%, -50%) !important; /* Ajusta la posición para centrar el div exactamente */
+  z-index: 9999 !important;    /* Asegura que el div esté por encima de otros elementos */
+  visibility: visible !important; /* Fuerza que el div sea visible */
+  opacity: 1 !important;       /* Asegura que esté completamente visible */
+  background-color: black !important;  /* Fondo blanco */
+  padding: 20px !important;    /* Espacio interno */
+  border: 1px solid #000000 !important;  /* Borde negro */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) !important; /* Sombra para resaltar el div */
+  border-radius: 8px !important;  /* Bordes redondeados */
+  width: 300px !important;  /* Ancho personalizado */
+  text-align: center !important;  /* Centra el texto dentro del div */
+  max-height: 90vh !important;  /* Limita la altura del calendario */
+  overflow-y: auto !important;  /* Añade desplazamiento vertical si es necesario */
 }

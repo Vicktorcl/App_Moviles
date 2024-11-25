@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 import { AlertController, AnimationController } from '@ionic/angular';
-import { IonHeader, IonToolbar, IonButton, IonIcon,IonTitle } from "@ionic/angular/standalone";
+import { IonHeader, IonToolbar, IonButton, IonIcon,IonTitle, IonFabButton } from "@ionic/angular/standalone";
 import { TranslateModule } from '@ngx-translate/core';
 import { addIcons } from 'ionicons';
 import { logOutOutline } from 'ionicons/icons';
@@ -13,7 +13,7 @@ import { AuthService } from 'src/app/services/auth.service';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
   standalone: true,
-  imports: [IonIcon, IonHeader, IonToolbar, IonButton,IonTitle, CommonModule, TranslateModule ]
+  imports: [IonFabButton, IonIcon, IonHeader, IonToolbar, IonButton,IonTitle, CommonModule, TranslateModule ]
 })
 export class HeaderComponent implements AfterViewInit {
 

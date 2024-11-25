@@ -75,6 +75,10 @@ export class IngresoPage implements AfterViewInit, OnInit, ViewWillEnter {
     this.router.navigate(['/map']);
   }
 
+  toRegistrarse(): void {
+    this.router.navigate(['/registrarme']);
+  }
+
   // Método para navegar a la página de correo con el correo como parámetro
   public ingresarValidarCorreo(): void {
     this.router.navigate(['/correo']);

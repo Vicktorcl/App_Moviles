@@ -2,26 +2,45 @@
   <!-- Encabezado y logo -->
   <a id="topOfPage" href="#topOfPage"></a>
   <img alt="DUOC" src="assets/images/Logoduoc.png" class="foto-portada" />
+  <h3 class="ion-text-center" style="color: #ffb800;">Sistema de asistencia DUOC</h3>
 
   <!-- Formulario de gestión de publicaciones -->
   <ion-item-group>
     <ion-item lines="full">
       <ion-label position="floating">{{ 'TITLE' | translate }}</ion-label>
-      <ion-input [(ngModel)]="post.title" clearInput></ion-input>
+      <ion-input 
+        id="titulo" 
+        [(ngModel)]="post.title" 
+        clearInput>
+      </ion-input>
     </ion-item>
 
     <ion-item lines="full">
       <ion-label position="floating">{{ 'DESCRIPTION' | translate }}</ion-label>
-      <ion-textarea [(ngModel)]="post.body" clearInput></ion-textarea>
+      <ion-textarea 
+        id="contenido" 
+        [(ngModel)]="post.body" 
+        clearInput>
+      </ion-textarea>
     </ion-item>
   </ion-item-group>
 
   <!-- Botones de acción -->
   <div class="ion-text-center margin-top-6">
-    <ion-button color="light" shape="round" (click)="cleanPost()" fill="outline">
+    <ion-button 
+      id="limpiar" 
+      color="light" 
+      shape="round" 
+      (click)="cleanPost()" 
+      fill="outline">
       <ion-icon name="brush-outline" slot="start"></ion-icon> {{ 'CLEAR' | translate }}
     </ion-button>
-    <ion-button color="primary" shape="round" (click)="savePost()" expand="outline">
+    <ion-button 
+      id="guardar" 
+      color="primary" 
+      shape="round" 
+      (click)="savePost()" 
+      expand="outline">
       <ion-icon name="bookmark-outline" slot="start"></ion-icon>
       {{ post.id ? ('UPDATE' | translate) : ('SAVE' | translate) }}
     </ion-button>
@@ -44,11 +63,19 @@
         <p>{{ post.body }}</p>
 
         <div style="display: flex; justify-content: flex-end; gap: 10px;">
-          <ion-fab-button size="small" color="primary" (click)="editPost(post)">
-            <ion-icon name="pencil-outline"></ion-icon>
+          <ion-fab-button 
+            id="editar-{{ post.id }}" 
+            size="small" 
+            color="primary" 
+            (click)="editPost(post)">
+            <ion-icon name="pencil-outline">Editar</ion-icon>
           </ion-fab-button>
-          <ion-fab-button size="small" color="danger" (click)="deletePost(post)">
-            <ion-icon name="trash-outline"></ion-icon>
+          <ion-fab-button 
+            id="eliminar-{{ post.id }}" 
+            size="small" 
+            color="danger" 
+            (click)="deletePost(post)">
+            <ion-icon name="trash-outline">Eliminar</ion-icon>
           </ion-fab-button>
         </div>
       </ion-label>

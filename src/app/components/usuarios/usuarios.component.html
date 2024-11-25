@@ -1,0 +1,25 @@
+<ion-content>
+  <div class="ion-text-center contenedor-principal">
+    <a id="topOfPage" href="#topOfPage"></a>
+    <img alt="DUOC" src="assets/images/Logoduoc.png" class="foto-portada" />
+    <h3 class="ion-text-center" style="color: #ffb800;">Sistema de asistencia DUOC</h3>
+  </div>
+
+  <ion-list>
+    <ion-card *ngFor="let usuario of listaUsuarios">
+      <ion-card-header>
+        <ion-card-title>{{ usuario.nombre }} {{ usuario.apellido }}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p>Correo: {{ usuario.correo }}</p>
+        <!-- Oculta el botón solo si el nombre es exactamente "admin" -->
+        <ion-button 
+          *ngIf="usuario.cuenta !== 'admin'" 
+          color="danger"  
+          (click)="eliminarUsuario(usuario.cuenta)">
+          Eliminar
+        </ion-button>
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+</ion-content>

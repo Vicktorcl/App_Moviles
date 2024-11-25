@@ -1,16 +1,26 @@
 <app-header id="saludo"></app-header> 
 
 <ion-content [fullscreen]="true">
-  <app-codigoqr *ngIf="selectedComponent === 'codigoqr'" 
+  <!-- Mostrar el componente de código QR solo si el usuario no es admin -->
+  <app-codigoqr *ngIf="selectedComponent === 'codigoqr' && cuenta !== 'admin'" 
   (scanned)="webQrScanned($event)"
   (stopped)="webQrStopped()">
   </app-codigoqr>
-  <app-miclase *ngIf="selectedComponent === 'miclase'"></app-miclase>
+
+  <!-- Mostrar el componente 'Mi Clase' solo si el usuario no es admin -->
+  <app-miclase *ngIf="selectedComponent === 'miclase' && cuenta !== 'admin'"></app-miclase>
+
+  <!-- Mostrar el componente Foro siempre -->
   <app-foro *ngIf="selectedComponent === 'foro'"></app-foro>
+
+  <!-- Mostrar el componente Mis Datos siempre -->
   <app-misdatos *ngIf="selectedComponent === 'misdatos'"></app-misdatos>
+
+  <!-- Mostrar el componente de usuarios solo si el usuario es admin -->
+  <app-usuarios *ngIf="selectedComponent === 'usuarios' && cuenta === 'admin'"></app-usuarios>
 </ion-content>
 
-
 <app-footer
+  [cuenta]="cuenta"
   (footerClick)="footerClick($event)">
 </app-footer>

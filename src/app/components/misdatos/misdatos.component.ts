@@ -51,14 +51,71 @@ export class MisdatosComponent implements OnInit {
   ngOnInit() {}
 
   async actualizarDatos() {
-    if (this.usuario.nombre.trim() === '') {
-      showToast('El usuario debe tener un nombre');
-    } else {
-      console.log('Datos del usuario antes de guardar:', this.usuario);
-      this.bd.guardarUsuario(this.usuario);
-      this.auth.guardarUsuarioAutenticado(this.usuario);
-      showToast('El usuario fue guardado correctamente');
+    if (!this.usuario.cuenta || this.usuario.cuenta.trim() === '') {
+      showToast('Debe ingresar una cuenta válida');
+      return;
     }
+    
+    if (!this.usuario.correo || this.usuario.correo.trim() === '' || !this.usuario.correo.includes('@')) {
+      showToast('Debe ingresar un correo válido');
+      return;
+    }
+  
+    if (!this.usuario.nombre || this.usuario.nombre.trim() === '') {
+      showToast('Debe ingresar un nombre');
+      return;
+    }
+  
+    if (!this.usuario.apellido || this.usuario.apellido.trim() === '') {
+      showToast('Debe ingresar un apellido');
+      return;
+    }
+  
+    if (!this.usuario.direccion || this.usuario.direccion.trim() === '') {
+      showToast('Debe ingresar una dirección');
+      return;
+    }
+  
+    if (!this.usuario.nivelEducacional) {
+      showToast('Debe seleccionar un nivel educacional');
+      return;
+    }
+  
+    if (!this.usuario.fechaNacimiento) {
+      showToast('Debe seleccionar una fecha de nacimiento');
+      return;
+    }
+  
+    if (!this.usuario.preguntaSecreta || this.usuario.preguntaSecreta.trim() === '') {
+      showToast('Debe ingresar una pregunta secreta');
+      return;
+    }
+  
+    if (!this.usuario.respuestaSecreta || this.usuario.respuestaSecreta.trim() === '') {
+      showToast('Debe ingresar una respuesta secreta');
+      return;
+    }
+  
+    if (!this.usuario.password || this.usuario.password.trim() === '') {
+      showToast('Debe ingresar una contraseña');
+      return;
+    }
+  
+    if (!this.repeatPassword || this.repeatPassword.trim() === '') {
+      showToast('Debe repetir la contraseña');
+      return;
+    }
+  
+    if (this.usuario.password !== this.repeatPassword) {
+      showToast('Las contraseñas no coinciden');
+      return;
+    }
+  
+    // Guardar datos si todos los campos son válidos
+    console.log('Datos del usuario antes de guardar:', this.usuario);
+    this.bd.guardarUsuario(this.usuario);
+    this.auth.guardarUsuarioAutenticado(this.usuario);
+    showToast('El usuario fue guardado correctamente');
   }
 
   actualizarNivelEducacional(event: any) {

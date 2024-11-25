@@ -193,7 +193,7 @@ export class DataBaseService {
 
   async eliminarUsuarioUsandoCuenta(cuenta: string): Promise<boolean> {
     try {
-      const q = 'DELETE FROM USUARIOS WHERE cuenta=?';
+      const q = 'DELETE FROM USUARIO WHERE cuenta=?';
       const result: capSQLiteChanges = await this.db.run(q, [cuenta]);
       const rowsAffected = result.changes?.changes ?? 0;
       await this.leerUsuarios();
@@ -219,7 +219,7 @@ export class DataBaseService {
     try {
       const q = 'SELECT * FROM USUARIO WHERE cuenta=?;';
       const rows = (await this.db.query(q, [cuenta])).values;
-      return rows? this.rowToUser(rows[0]) : undefined;
+      return rows?.length? this.rowToUser(rows[0]) : undefined;
     } catch (error) {
       showAlertError('DataBaseService.findUserByEmail', error);
       return undefined;

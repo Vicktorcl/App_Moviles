@@ -1,32 +1,41 @@
 <ion-footer class="custom-footer">
   <ion-toolbar class="custom-footer">
     <ion-segment
-     value="welcome" 
-     (ionChange)="segmentedChange($event)" 
-     [(ngModel)]="selectedButton" 
-     class="centrar">
+      value="codigoqr"
+      (ionChange)="segmentedChange($event)"
+      [(ngModel)]="selectedButton"
+      class="centrar">
 
-      <ion-segment-button value="codigoqr">
+      <!-- Mostrar botón de código QR solo si el usuario no es admin -->
+      <ion-segment-button value="codigoqr" *ngIf="usuarioAutenticado?.cuenta !== 'admin'">
         <ion-icon name="home-outline"></ion-icon>
         {{ 'Footer.Button.Welcome' | translate }}
       </ion-segment-button>
 
-      <ion-segment-button value="miclase">
+      <!-- Mostrar botón Mi Clase solo si el usuario no es admin -->
+      <ion-segment-button value="miclase" *ngIf="usuarioAutenticado?.cuenta !== 'admin'">
         <ion-icon name="school-outline"></ion-icon>
         {{ 'Footer.Button.MyClass' | translate }}
       </ion-segment-button>
 
+      <!-- Mostrar botón Foro siempre -->
       <ion-segment-button value="foro">
         <ion-icon name="pencil-outline"></ion-icon>
         {{ 'Footer.Button.Forum' | translate }}
       </ion-segment-button>
 
+      <!-- Mostrar botón Mis Datos siempre -->
       <ion-segment-button value="misdatos">
         <ion-icon name="grid-outline"></ion-icon>
         {{ 'Footer.Button.MyData' | translate }}
       </ion-segment-button>
 
-    </ion-segment>
+      <!-- Mostrar botón Usuarios solo si el usuario es admin -->
+      <ion-segment-button value="usuarios" *ngIf="usuarioAutenticado?.cuenta === 'admin'">
+        <ion-icon name="person-circle-outline"></ion-icon>
+        Usuarios
+      </ion-segment-button>
 
+    </ion-segment>
   </ion-toolbar>
 </ion-footer>
