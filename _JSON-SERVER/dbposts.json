@@ -1,16 +1,10 @@
 {
   "posts": [
     {
-      "id": "1",
-      "title": "Instituto Duoc: Una Institución Educativa de Excelencia",
-      "body": "El Instituto Duoc se ha destacado por ofrecer una educación de calidad en diversas áreas del conocimiento. Sus programas académicos son altamente valorados por estudiantes y empleadores por igual.",
-      "author": "Juan Pérez"
-    },
-    {
       "id": "2",
-      "title": "Carrera de Ingeniería en Informática en el Instituto Duoc",
-      "body": "Si te apasiona la tecnología, la carrera de Ingeniería en Informática en el Instituto Duoc es una excelente opción. Aprenderás las habilidades necesarias para destacarte en el campo de la informática.",
-      "author": "Carla Mujica"
+      "title": "11Publicacion de Prueba Actualizada",
+      "body": "Contenido actualizado",
+      "author": "Juan Perez"
     },
     {
       "id": "3",
@@ -43,16 +37,82 @@
       "author": "Carla Mujica"
     },
     {
-      "id": "9",
-      "title": "Estudiar en el Instituto Duoc: Una Experiencia Transformadora",
-      "body": "La experiencia de estudiar en el Instituto Duoc puede transformar tu vida y brindarte las herramientas necesarias para alcanzar tus metas profesionales.",
-      "author": "Ana Torres"
-    },
-    {
       "id": "6",
       "title": "Instituto Duoc: Compromiso con la Excelencia Académica",
       "body": "La excelencia académica es una prioridad en el Instituto Duoc. Sus programas están diseñados para brindar una formación de alto nivel.",
       "author": "Ana Torres"
+    },
+    {
+      "id": "1",
+      "title": "11Publicación de Prueba Actualizada",
+      "body": "Contenido actualizado",
+      "author": "Juan Pérez"
+    },
+    {
+      "id": "10",
+      "title": "Publicación de Prueba",
+      "body": "Contenido nuevo",
+      "author": "Juan Pérez"
+    },
+    {
+      "id": "1a1d",
+      "title": "Publicación de Prueba",
+      "body": "Contenido nuevo",
+      "author": "Juan Pérez"
+    },
+    {
+      "id": "9",
+      "title": "Publicación de Prueba",
+      "body": "Contenido nuevo",
+      "author": "Juan Pérez"
+    },
+    {
+      "id": "5a1e",
+      "title": "Publicación de Prueba",
+      "body": "Contenido nuevo",
+      "author": "Juan Pérez"
+    },
+    {
+      "id": "59fd",
+      "title": "Publicación de Prueba",
+      "body": "Contenido nuevo",
+      "author": "Juan Pérez"
+    },
+    {
+      "id": "2f78",
+      "title": "Publicación de Prueba",
+      "body": "Contenido nuevo",
+      "author": "Juan Pérez"
+    },
+    {
+      "id": "ea22",
+      "title": "Publicación de Prueba",
+      "body": "Contenido nuevo",
+      "author": "Juan Pérez"
+    },
+    {
+      "id": "a7da",
+      "title": "Publicación de Prueba",
+      "body": "Contenido nuevo",
+      "author": "Juan Pérez"
+    },
+    {
+      "id": "9b4c",
+      "title": "Publicación de Prueba",
+      "body": "Contenido nuevo",
+      "author": "Juan Pérez"
+    },
+    {
+      "id": "c07e",
+      "title": "Publicación de Prueba",
+      "body": "Contenido nuevo",
+      "author": "Juan Pérez"
+    },
+    {
+      "id": "3228",
+      "title": "Publicación de Prueba",
+      "body": "Contenido nuevo",
+      "author": "Juan Pérez"
     }
   ]
 }

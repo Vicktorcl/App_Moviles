@@ -9,16 +9,17 @@
     
     "Start.StartNewExperience": "Iniciar una nueva experiencia",
 
-    "Login.Title.Login": "Iniciar sesión",
+    "Login.Title.Login": "Iniciar Sesión",
     "Login.Title.Theme": "Tema de color",
     "Login.Label.Email": "Correo electrónico",
     "Login.Placeholder.Email": "Ingresa tu correo aquí",
     "Login.Label.Password": "Contraseña",
     "Login.Placeholder.Password": "Ingresa tu contraseña aquí",
-    "Login.Button.Login": "Iniciar sesión",
+    "Login.Button.Login": "Ingresar",
     "Login.Button.gps": "Mi ruta a Duoc",
     "Login.Button.ForgotPassword": "Olvidé mi contraseña",
     "Login.Button.DarkMode": "Modo oscuro",
+    "Login.Button.Register": "Registrarse",
 
     "WelcomePage.Title.Wellcome": "¡Bienvenido a Asistencia Duoc!",
 

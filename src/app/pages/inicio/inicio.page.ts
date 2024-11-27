@@ -51,21 +51,30 @@ export class InicioPage implements OnInit {
   }
 
   // Cambia al componente correcto cuando la vista se va a cargar
-  ionViewWillEnter() {
-    this.changeComponent('codigoqr');
-    this.actualizarFooter();
-  }
-
-  // Maneja los clics en el header para el escaneo de QR
-  async headerClick(button: string) {
-    if (button === 'scan' && Capacitor.getPlatform() === 'web') {
-      this.selectedComponent = 'codigoqr';
-    } else if (button === 'scan' && Capacitor.getPlatform() !== 'web') {
-      const qr = await this.scanner.scan();
-      this.mostrarAsistencia(qr);
+  async ionViewWillEnter() {
+    if (!this.cuenta) {
+      // Espera a que la cuenta se cargue correctamente antes de ejecutar cualquier lógica
+      await this.ngOnInit();
+    }
+  
+    // Actualiza el footer después de que la cuenta esté cargada
+    this.actualizarFooter(); 
+  
+    // Si el usuario no es admin, realiza el escaneo del QR automáticamente
+    if (this.cuenta !== 'admin') {
+      const button = 'codigoqr';  // Aquí defines el botón o acción que quieres realizar
+      
+      if (button === 'codigoqr' && Capacitor.getPlatform() === 'web') {
+        this.selectedComponent = 'codigoqr';  // Cambia al componente 'codigoqr' si está en la plataforma web
+      } else if (button === 'codigoqr' && Capacitor.getPlatform() !== 'web') {
+        const qr = await this.scanner.scan();  // Realiza el escaneo del código QR si no está en la plataforma web
+        this.mostrarAsistencia(qr);  // Muestra la asistencia con el QR escaneado
+      }
+    } else {
+      // Si el usuario es admin, redirige al componente Foro
+      this.selectedComponent = 'foro';
     }
   }
-
   // Para el escaneo web de QR
   webQrScanned(qr: string) {
     this.mostrarAsistencia(qr);

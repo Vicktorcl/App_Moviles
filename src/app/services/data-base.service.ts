@@ -49,6 +49,18 @@ export class DataBaseService {
     new Date(2000, 2, 20),
     'Providencia');
 
+    testUser4 = Usuario.getNewUsuario(
+      'admin', 
+      'admin@duocuc.cl', 
+      '1234', 
+      '¿Cuál es tu animal favorito?', 
+      'gato',
+      'Admin', 
+      'Admin', 
+      NivelEducacional.buscarNivelEducacional(6)!,
+      new Date(2000, 0, 5),
+      'La Florida');
+
   userUpgrades = [
     {
       toVersion: 1,
@@ -121,6 +133,11 @@ export class DataBaseService {
       const user3 = await this.leerUsuario(this.testUser3.nombre);
       if (!user3) {
         await this.guardarUsuario(this.testUser3);
+      }
+
+      const user4 = await this.leerUsuario(this.testUser4.nombre);
+      if (!user4) {
+        await this.guardarUsuario(this.testUser4);
       }
   
     } catch (error) {
